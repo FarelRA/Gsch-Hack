@@ -35,6 +35,7 @@
 
 # virtual methods
 .method public final run()V
+    .locals 0
 
     return-void
 .end method
