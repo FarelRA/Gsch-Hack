@@ -102,7 +102,7 @@
 
     move-result-object p1
 
-    const/4 p2, 0x0
+    const/4 p2, 0x1
 
     invoke-virtual {p1, p2}, Landroid/app/AlertDialog$Builder;->setCancelable(Z)Landroid/app/AlertDialog$Builder;
 

@@ -32,19 +32,7 @@
 
 # virtual methods
 .method public lock()V
-    .locals 2
-    .annotation runtime Landroid/webkit/JavascriptInterface;
-    .end annotation
-
-    iget-object v0, p0, Lnet/geschool/app/student/MainActivity$n;->a:Lnet/geschool/app/student/MainActivity;
-
-    iget-object v0, v0, Lnet/geschool/app/student/MainActivity;->mActivity:Lnet/geschool/app/student/MainActivity;
-
-    new-instance v1, Lnet/geschool/app/student/MainActivity$n$a;
-
-    invoke-direct {v1, p0}, Lnet/geschool/app/student/MainActivity$n$a;-><init>(Lnet/geschool/app/student/MainActivity$n;)V
-
-    invoke-virtual {v0, v1}, Landroid/app/Activity;->runOnUiThread(Ljava/lang/Runnable;)V
+    .locals 0
 
     return-void
 .end method

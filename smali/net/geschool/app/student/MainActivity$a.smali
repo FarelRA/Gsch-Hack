@@ -200,10 +200,6 @@
     .line 78
     iput-object p1, v1, Lnet/geschool/app/student/MainActivity;->mBaseUrl:Ljava/lang/String;
 
-    .line 79
-    .line 80
-    invoke-virtual {v1}, Lnet/geschool/app/student/MainActivity;->lockdown()V
-
     .line 81
     .line 82
     .line 83

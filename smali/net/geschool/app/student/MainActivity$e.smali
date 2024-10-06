@@ -238,7 +238,7 @@
     .line 90
     .line 91
     .line 92
-    move-result v8
+    const/4 v8, 0x0
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_1
 
@@ -549,7 +549,7 @@
     .line 233
     .line 234
     .line 235
-    move-result v4
+    const/4 v4, 0x0
     :try_end_3
     .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_3} :catch_3
 
@@ -649,7 +649,7 @@
     .line 274
     .line 275
     :goto_6
-    if-eqz v8, :cond_7
+    goto :cond_7
 
     .line 276
     .line 277
@@ -717,12 +717,11 @@
 
     .line 310
     :cond_6
-    invoke-virtual/range {p1 .. p1}, Lu0/l;->b()Ljava/lang/Exception;
+    goto :goto_7
 
     .line 311
     .line 312
     .line 313
-    move-result-object v0
 
     .line 314
     new-instance v2, Ljava/lang/StringBuilder;

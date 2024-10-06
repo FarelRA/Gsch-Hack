@@ -43,9 +43,5 @@
 
     invoke-static {p1, v0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    iget-object p1, p0, Lnet/geschool/app/student/MainActivity$h;->b:Lnet/geschool/app/student/MainActivity;
-
-    invoke-virtual {p1}, Landroid/app/Activity;->startLockTask()V
-
     return-void
 .end method

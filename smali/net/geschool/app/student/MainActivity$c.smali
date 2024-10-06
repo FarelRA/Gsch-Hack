@@ -211,8 +211,6 @@
 
     .line 84
     .line 85
-    invoke-virtual {v1}, Lnet/geschool/app/student/MainActivity;->lockdown()V
-
     .line 86
     .line 87
     .line 88

@@ -35,13 +35,7 @@
 
 # virtual methods
 .method public final run()V
-    .locals 1
-
-    iget-object v0, p0, Lnet/geschool/app/student/MainActivity$n$a;->b:Lnet/geschool/app/student/MainActivity$n;
-
-    iget-object v0, v0, Lnet/geschool/app/student/MainActivity$n;->a:Lnet/geschool/app/student/MainActivity;
-
-    invoke-virtual {v0}, Lnet/geschool/app/student/MainActivity;->lockdown()V
+    .locals 0
 
     return-void
 .end method

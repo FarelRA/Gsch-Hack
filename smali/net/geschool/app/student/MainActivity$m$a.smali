@@ -35,47 +35,6 @@
 
 # virtual methods
 .method public final run()V
-    .locals 3
-
-    new-instance v0, Landroid/app/AlertDialog$Builder;
-
-    iget-object v1, p0, Lnet/geschool/app/student/MainActivity$m$a;->b:Lnet/geschool/app/student/MainActivity$m;
-
-    iget-object v1, v1, Lnet/geschool/app/student/MainActivity$m;->b:Lnet/geschool/app/student/MainActivity;
-
-    iget-object v1, v1, Lnet/geschool/app/student/MainActivity;->mActivity:Lnet/geschool/app/student/MainActivity;
-
-    invoke-direct {v0, v1}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
-
-    const-string v1, "Unsupported Device"
-
-    invoke-virtual {v0, v1}, Landroid/app/AlertDialog$Builder;->setTitle(Ljava/lang/CharSequence;)Landroid/app/AlertDialog$Builder;
-
-    move-result-object v0
-
-    const-string v1, "Rooted device detected."
-
-    invoke-virtual {v0, v1}, Landroid/app/AlertDialog$Builder;->setMessage(Ljava/lang/CharSequence;)Landroid/app/AlertDialog$Builder;
-
-    move-result-object v0
-
-    const/4 v1, 0x0
-
-    invoke-virtual {v0, v1}, Landroid/app/AlertDialog$Builder;->setCancelable(Z)Landroid/app/AlertDialog$Builder;
-
-    move-result-object v0
-
-    new-instance v1, Lnet/geschool/app/student/MainActivity$m$a$a;
-
-    invoke-direct {v1}, Lnet/geschool/app/student/MainActivity$m$a$a;-><init>()V
-
-    const-string v2, "ok"
-
-    invoke-virtual {v0, v2, v1}, Landroid/app/AlertDialog$Builder;->setPositiveButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Landroid/app/AlertDialog$Builder;->show()Landroid/app/AlertDialog;
 
     return-void
 .end method

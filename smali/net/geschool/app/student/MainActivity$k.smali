@@ -66,24 +66,14 @@
     .line 16
     .line 17
     .line 18
-    invoke-static {}, Ljava/util/UUID;->randomUUID()Ljava/util/UUID;
-
     .line 19
     .line 20
     .line 21
-    move-result-object p2
-
     .line 22
-    invoke-virtual {p2}, Ljava/util/UUID;->toString()Ljava/lang/String;
-
     .line 23
     .line 24
     .line 25
-    move-result-object p2
-
     .line 26
-    invoke-virtual {p1, p2}, Lnet/geschool/app/student/MainActivity;->checkIntegrity(Ljava/lang/String;)V
-
     .line 27
     .line 28
     .line 29
