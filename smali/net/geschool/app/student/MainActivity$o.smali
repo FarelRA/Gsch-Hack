@@ -32,33 +32,7 @@
 
 # virtual methods
 .method public final run()V
-    .locals 2
-
-    iget-object v0, p0, Lnet/geschool/app/student/MainActivity$o;->b:Lnet/geschool/app/student/MainActivity;
-
-    iget-object v1, v0, Lnet/geschool/app/student/MainActivity;->mActivity:Lnet/geschool/app/student/MainActivity;
-
-    invoke-virtual {v1}, Lnet/geschool/app/student/MainActivity;->isLockMode()Z
-
-    move-result v1
-
-    iget-object v0, v0, Lnet/geschool/app/student/MainActivity;->mActivity:Lnet/geschool/app/student/MainActivity;
-
-    if-nez v1, :cond_0
-
-    new-instance v1, Lnet/geschool/app/student/MainActivity$o$a;
-
-    invoke-direct {v1, p0}, Lnet/geschool/app/student/MainActivity$o$a;-><init>(Lnet/geschool/app/student/MainActivity$o;)V
-
-    goto :goto_0
-
-    :cond_0
-    new-instance v1, Lnet/geschool/app/student/MainActivity$o$b;
-
-    invoke-direct {v1, p0}, Lnet/geschool/app/student/MainActivity$o$b;-><init>(Lnet/geschool/app/student/MainActivity$o;)V
-
-    :goto_0
-    invoke-virtual {v0, v1}, Landroid/app/Activity;->runOnUiThread(Ljava/lang/Runnable;)V
+    .locals 0
 
     return-void
 .end method

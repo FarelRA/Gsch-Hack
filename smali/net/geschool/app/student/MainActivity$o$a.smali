@@ -43,7 +43,7 @@
 
     iget-object v0, v0, Lnet/geschool/app/student/MainActivity;->mScreenPinned:Landroid/view/View;
 
-    const/4 v1, 0x0
+    const/16 v1, 0x8
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 

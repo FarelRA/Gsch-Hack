@@ -370,47 +370,7 @@
 .end method
 
 .method public doDisabledMode()V
-    .locals 3
-
-    iget-object v0, p0, Lnet/geschool/app/student/MainActivity;->mMultiWindowSplash:Landroid/view/View;
-
-    const/4 v1, 0x0
-
-    invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
-
-    iget-object v0, p0, Lnet/geschool/app/student/MainActivity;->mMultiWindowSplash:Landroid/view/View;
-
-    const/high16 v2, -0x10000
-
-    invoke-virtual {v0, v2}, Landroid/view/View;->setBackgroundColor(I)V
-
-    iget-object v0, p0, Lnet/geschool/app/student/MainActivity;->w:Landroid/widget/TextView;
-
-    const-string v2, "UNAUTHORIZED APPLICATION DETECTED.\n\nTerdapat aplikasi yang tidak diizikan. \n\n Hapus Aplikasi Terlebih dahulu untuk memulai"
-
-    invoke-virtual {v0, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
-
-    iget-object v0, p0, Lnet/geschool/app/student/MainActivity;->w:Landroid/widget/TextView;
-
-    const/high16 v2, 0x41a00000    # 20.0f
-
-    invoke-virtual {v0, v2}, Landroid/widget/TextView;->setTextSize(F)V
-
-    iget-object v0, p0, Lnet/geschool/app/student/MainActivity;->w:Landroid/widget/TextView;
-
-    const/4 v2, -0x1
-
-    invoke-virtual {v0, v2}, Landroid/widget/TextView;->setTextColor(I)V
-
-    iget-object v0, p0, Lnet/geschool/app/student/MainActivity;->mActivity:Lnet/geschool/app/student/MainActivity;
-
-    const-string v2, "UNAUTHORIZED APPLICATION DETECTED"
-
-    invoke-static {v0, v2, v1}, Landroid/widget/Toast;->makeText(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Landroid/widget/Toast;->show()V
+    .locals 0
 
     return-void
 .end method
@@ -470,43 +430,9 @@
 .end method
 
 .method public isLockMode()Z
-    .locals 4
+    .locals 1
 
-    const-string v0, "activity"
-
-    invoke-virtual {p0, v0}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/app/ActivityManager;
-
-    sget v1, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v2, 0x17
-
-    const/4 v3, 0x1
-
-    if-lt v1, v2, :cond_0
-
-    invoke-static {v0}, Lo/b;->a(Landroid/app/ActivityManager;)I
-
-    move-result v1
-
-    if-eqz v1, :cond_0
-
-    return v3
-
-    :cond_0
-    invoke-virtual {v0}, Landroid/app/ActivityManager;->isInLockTaskMode()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1
-
-    return v3
-
-    :cond_1
-    const/4 v0, 0x0
+    const/4 v0, 0x1
 
     return v0
 .end method
@@ -596,96 +522,8 @@
 .end method
 
 .method public lockdown()V
-    .locals 7
+    .locals 0
 
-    iget-boolean v0, p0, Lnet/geschool/app/student/MainActivity;->p:Z
-
-    const/16 v1, 0x8
-
-    if-eqz v0, :cond_0
-
-    iget-object v0, p0, Lnet/geschool/app/student/MainActivity;->mScreenPinned:Landroid/view/View;
-
-    invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
-
-    invoke-virtual {p0}, Landroid/app/Activity;->startLockTask()V
-
-    return-void
-
-    :cond_0
-    invoke-virtual {p0}, Lnet/geschool/app/student/MainActivity;->isLockMode()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1
-
-    return-void
-
-    :cond_1
-    invoke-virtual {p0}, Landroid/app/Activity;->getWindow()Landroid/view/Window;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Landroid/view/Window;->getDecorView()Landroid/view/View;
-
-    move-result-object v0
-
-    const/16 v2, 0x1006
-
-    invoke-virtual {v0, v2}, Landroid/view/View;->setSystemUiVisibility(I)V
-
-    invoke-virtual {p0}, Landroid/app/Activity;->getWindow()Landroid/view/Window;
-
-    move-result-object v0
-
-    const/16 v2, 0x80
-
-    invoke-virtual {v0, v2}, Landroid/view/Window;->addFlags(I)V
-
-    invoke-virtual {p0}, Landroid/app/Activity;->getWindow()Landroid/view/Window;
-
-    move-result-object v0
-
-    const/16 v2, 0x2000
-
-    invoke-virtual {v0, v2, v2}, Landroid/view/Window;->setFlags(II)V
-
-    iget-object v0, p0, Lnet/geschool/app/student/MainActivity;->mActivity:Lnet/geschool/app/student/MainActivity;
-
-    invoke-virtual {v0}, Lnet/geschool/app/student/MainActivity;->isLockMode()Z
-
-    move-result v0
-
-    if-nez v0, :cond_2
-
-    invoke-virtual {p0}, Landroid/app/Activity;->startLockTask()V
-
-    :cond_2
-    iget-object v0, p0, Lnet/geschool/app/student/MainActivity;->mScreenPinned:Landroid/view/View;
-
-    invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
-
-    iget-object v0, p0, Lnet/geschool/app/student/MainActivity;->q:Ljava/util/Timer;
-
-    if-nez v0, :cond_3
-
-    new-instance v1, Ljava/util/Timer;
-
-    invoke-direct {v1}, Ljava/util/Timer;-><init>()V
-
-    iput-object v1, p0, Lnet/geschool/app/student/MainActivity;->q:Ljava/util/Timer;
-
-    new-instance v2, Lnet/geschool/app/student/MainActivity$o;
-
-    invoke-direct {v2, p0}, Lnet/geschool/app/student/MainActivity$o;-><init>(Lnet/geschool/app/student/MainActivity;)V
-
-    const-wide/16 v3, 0x0
-
-    const-wide/16 v5, 0x1f4
-
-    invoke-virtual/range {v1 .. v6}, Ljava/util/Timer;->scheduleAtFixedRate(Ljava/util/TimerTask;JJ)V
-
-    :cond_3
     return-void
 .end method
 
@@ -1199,36 +1037,12 @@
 
     and-int/lit8 v2, v2, 0x2
 
-    if-eqz v2, :cond_0
-
     invoke-static {v0}, Landroid/webkit/WebView;->setWebContentsDebuggingEnabled(Z)V
 
     :cond_0
     const/16 v2, 0x18
 
     const-string v3, "MULTIWINDOW DETECTED"
-
-    if-lt p1, v2, :cond_1
-
-    iget-object p1, p0, Lnet/geschool/app/student/MainActivity;->mActivity:Lnet/geschool/app/student/MainActivity;
-
-    invoke-virtual {p1}, Landroid/app/Activity;->isInMultiWindowMode()Z
-
-    move-result p1
-
-    if-eqz p1, :cond_1
-
-    iget-object p1, p0, Lnet/geschool/app/student/MainActivity;->mAlertSplash:Landroid/view/View;
-
-    invoke-virtual {p1, v1}, Landroid/view/View;->setVisibility(I)V
-
-    iget-object p1, p0, Lnet/geschool/app/student/MainActivity;->mActivity:Lnet/geschool/app/student/MainActivity;
-
-    invoke-static {p1, v3, v1}, Landroid/widget/Toast;->makeText(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;
-
-    move-result-object p1
-
-    invoke-virtual {p1}, Landroid/widget/Toast;->show()V
 
     :cond_1
     invoke-virtual {p0}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
@@ -1286,7 +1100,7 @@
 
     move-result v5
 
-    if-ge v0, v5, :cond_5
+    if-le v0, v5, :cond_5
 
     invoke-interface {p1, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
@@ -1313,8 +1127,6 @@
     move-result v5
 
     if-eqz v5, :cond_4
-
-    invoke-virtual {p0}, Lnet/geschool/app/student/MainActivity;->doDisabledMode()V
 
     return-void
 
@@ -1404,66 +1216,12 @@
 
     sget p1, Landroid/os/Build$VERSION;->SDK_INT:I
 
-    if-lt p1, v2, :cond_8
-
-    iget-object p1, p0, Lnet/geschool/app/student/MainActivity;->mActivity:Lnet/geschool/app/student/MainActivity;
-
-    invoke-virtual {p1}, Landroid/app/Activity;->isInMultiWindowMode()Z
-
-    move-result p1
-
-    if-eqz p1, :cond_8
-
-    iget-object p1, p0, Lnet/geschool/app/student/MainActivity;->mAlertSplash:Landroid/view/View;
-
-    invoke-virtual {p1, v1}, Landroid/view/View;->setVisibility(I)V
-
-    iget-object p1, p0, Lnet/geschool/app/student/MainActivity;->w:Landroid/widget/TextView;
-
-    invoke-virtual {p1, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
-
-    iget-object p1, p0, Lnet/geschool/app/student/MainActivity;->mActivity:Lnet/geschool/app/student/MainActivity;
-
-    invoke-static {p1, v3, v1}, Landroid/widget/Toast;->makeText(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;
-
-    move-result-object p1
-
-    invoke-virtual {p1}, Landroid/widget/Toast;->show()V
-
-    :cond_8
     return-void
 .end method
 
 .method public onMultiWindowModeChanged(Z)V
-    .locals 2
+    .locals 0
 
-    invoke-super {p0, p1}, Le0/d;->onMultiWindowModeChanged(Z)V
-
-    if-eqz p1, :cond_0
-
-    iget-object p1, p0, Lnet/geschool/app/student/MainActivity;->mWebView:Landroid/webkit/WebView;
-
-    const-string v0, "javascript: window.GS_OVERLAY=1;"
-
-    invoke-virtual {p1, v0}, Landroid/webkit/WebView;->loadUrl(Ljava/lang/String;)V
-
-    iget-object p1, p0, Lnet/geschool/app/student/MainActivity;->mMultiWindowSplash:Landroid/view/View;
-
-    const/4 v0, 0x0
-
-    invoke-virtual {p1, v0}, Landroid/view/View;->setVisibility(I)V
-
-    iget-object p1, p0, Lnet/geschool/app/student/MainActivity;->mActivity:Lnet/geschool/app/student/MainActivity;
-
-    const-string v1, "MULTIWINDOW DETECTED"
-
-    invoke-static {p1, v1, v0}, Landroid/widget/Toast;->makeText(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;
-
-    move-result-object p1
-
-    invoke-virtual {p1}, Landroid/widget/Toast;->show()V
-
-    :cond_0
     return-void
 .end method
 
@@ -1536,19 +1294,10 @@
 .end method
 
 .method public final onPause()V
-    .locals 1
+    .locals 0
 
     invoke-super {p0}, Le0/d;->onPause()V
 
-    iget-boolean v0, p0, Lnet/geschool/app/student/MainActivity;->p:Z
-
-    if-eqz v0, :cond_0
-
-    const/4 v0, 0x0
-
-    invoke-static {v0}, Ljava/lang/System;->exit(I)V
-
-    :cond_0
     return-void
 .end method
 

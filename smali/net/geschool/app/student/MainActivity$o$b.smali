@@ -35,55 +35,17 @@
 
 # virtual methods
 .method public final run()V
-    .locals 5
+    .locals 2
 
-    const/4 v0, 0x2
+    iget-object v0, p0, Lnet/geschool/app/student/MainActivity$o$a;->b:Lnet/geschool/app/student/MainActivity$o;
 
-    new-array v0, v0, [I
-
-    iget-object v1, p0, Lnet/geschool/app/student/MainActivity$o$b;->b:Lnet/geschool/app/student/MainActivity$o;
-
-    iget-object v2, v1, Lnet/geschool/app/student/MainActivity$o;->b:Lnet/geschool/app/student/MainActivity;
-
-    iget-object v2, v2, Lnet/geschool/app/student/MainActivity;->mWebView:Landroid/webkit/WebView;
-
-    invoke-virtual {v2, v0}, Landroid/view/View;->getLocationOnScreen([I)V
-
-    const/4 v2, 0x0
-
-    aget v3, v0, v2
-
-    const/16 v4, 0x8
-
-    if-nez v3, :cond_0
-
-    const/4 v3, 0x1
-
-    aget v0, v0, v3
-
-    if-nez v0, :cond_0
-
-    iget-object v0, v1, Lnet/geschool/app/student/MainActivity$o;->b:Lnet/geschool/app/student/MainActivity;
+    iget-object v0, v0, Lnet/geschool/app/student/MainActivity$o;->b:Lnet/geschool/app/student/MainActivity;
 
     iget-object v0, v0, Lnet/geschool/app/student/MainActivity;->mScreenPinned:Landroid/view/View;
 
-    invoke-virtual {v0, v2}, Landroid/view/View;->setVisibility(I)V
+    const/16 v1, 0x8
 
-    goto :goto_0
-
-    :cond_0
-    iget-object v0, v1, Lnet/geschool/app/student/MainActivity$o;->b:Lnet/geschool/app/student/MainActivity;
-
-    iget-object v0, v0, Lnet/geschool/app/student/MainActivity;->mScreenPinned:Landroid/view/View;
-
-    invoke-virtual {v0, v4}, Landroid/view/View;->setVisibility(I)V
-
-    :goto_0
-    iget-object v0, v1, Lnet/geschool/app/student/MainActivity$o;->b:Lnet/geschool/app/student/MainActivity;
-
-    iget-object v0, v0, Lnet/geschool/app/student/MainActivity;->mScreenPinned:Landroid/view/View;
-
-    invoke-virtual {v0, v4}, Landroid/view/View;->setVisibility(I)V
+    invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
     return-void
 .end method
