@@ -35,15 +35,17 @@
 
 # virtual methods
 .method public final onTouch(Landroid/view/View;Landroid/view/MotionEvent;)Z
-    .locals 2
+    .locals 1
 
-    const/4 v1, 0x0
+    iget-object p2, p0, Lnet/geschool/app/student/MainActivity$l;->b:Lnet/geschool/app/student/MainActivity;
 
     iget-object p1, p2, Lnet/geschool/app/student/MainActivity;->mAlertSplash:Landroid/view/View;
 
     const/16 p2, 0x8
 
     invoke-virtual {p1, p2}, Landroid/view/View;->setVisibility(I)V
+
+    const/4 v1, 0x0
 
     return v1
 .end method
